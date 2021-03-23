@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<script src="https://cdn.bootcdn.net/ajax/libs/vue/2.6.12/vue.js"></script>
+		<title>双向绑定</title>
+	</head>
+	<body>
+		<div id="app">
+			{{demo}}
+			<input v-model="demo" />
+		</div>
+		<script>
+			new Vue({
+				el:'#app',
+				data(){
+					return{
+						demo:11
+					} 
+				},
+			})
+		</script>
+	</body>
+</html>
