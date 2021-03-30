@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<script src="./vue.js" type="text/javascript" charset="utf-8"></script>
+		<title>双色球号码组随机生成器</title>
+	</head>
+	<body>
+		<div id="app">
+			本期双色球：<br>
+			红球：{{num1}}&nbsp;{{num2}}&nbsp;{{num3}}&nbsp;{{num4}}&nbsp;{{num5}}&nbsp;{{num6}}
+			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;蓝球：{{blue}}<br />
+			<button type="button" @click="twoColor()">生成双色球</button>
+		</div>
+		<script>
+			new Vue({
+				el:'#app',
+				data(){
+					return{
+						num1:'',
+						num2:'',
+						num3:'',
+						num4:'',
+						num5:'',
+						num6:'',
+						blue:''
+					}
+				},
+				methods:{
+					twoColor(){
+						this.num1=Math.ceil(Math.random()*33)
+						this.num2=Math.ceil(Math.random()*33)
+						this.num3=Math.ceil(Math.random()*33)
+						this.num4=Math.ceil(Math.random()*33)
+						this.num5=Math.ceil(Math.random()*33)
+						this.num6=Math.ceil(Math.random()*33)
+						this.blue=Math.ceil(Math.random()*18)
+					}
+				}
+			})
+		</script>
+	</body>
+</html>
