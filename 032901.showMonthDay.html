@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<script src="./js/vue.js" type="text/javascript" charset="utf-8"></script>
+		<title>用户指定月份天数输出</title>
+	</head>
+	<body>
+		<div id="app">
+			输入月份：<input type="text" v-model="mon"/><br />
+			<button type="button" @click="day()">确认</button><br />
+			该月份的天数为：{{days}}
+		</div>
+		<script>
+			new Vue({
+				el:'#app',
+				data(){
+					return{
+						days:'',
+						mon:''
+					}
+				},
+				methods:{
+					day(){
+						if(this.mon>0){
+							if(this.mon<7){
+								if(this.mon%2==1){
+									this.days=31
+								}else if(this.mon==2){
+									this.days=28
+								}else{
+									this.days=30
+								}
+							}else{
+								if(this.mon==7 || this.mon==8){
+									this.days=31
+								}else if(this.mon%2==0){
+									this.days=31
+								}else{
+									this.days=30
+								}
+							}	
+						}else{
+							this.days='NG'
+						}
+					}
+				}
+			})
+		</script>
+	</body>
+</html>
