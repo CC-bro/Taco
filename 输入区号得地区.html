@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>输入区号得地区</title>
+		<script src="./js/vue.js"></script>
+	</head>
+	<body>
+		<div id="app">
+			<input type="text" v-model="n1"/>
+			<p v-if="n1==countries[0].num">
+				您输入的是{{countries[0].name}}区号+{{n1}},首都{{countries[0].city}}
+			</p>
+			<p v-else-if="n1==countries[1].num">
+				您输入的是{{countries[1].name}}区号+{{n1}},首都{{countries[1].city}}
+			</p>
+			<p v-else-if="n1==countries[2].num">
+				您输入的是{{countries[2].name}}区号+{{n1}},首都{{countries[2].city}}
+			</p>
+		</div>
+		<script type="text/javascript">
+			new Vue({
+				el:'#app',
+				data(){
+					return{
+						n1:'',
+						countries:[
+							{
+								name:'中国',
+								num:86,
+								city:'北京'
+							},
+							{
+								name:'英国',
+								num:44,
+								city:'伦敦'
+							},
+							{
+								name:'美国',
+								num:1,
+								city:'华盛顿'
+							}
+						]
+					}
+				}
+			})
+		</script>
+	</body>
+</html>
